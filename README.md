@@ -8,8 +8,9 @@ The problem set replicates the main results of the paper and covers:
 
 - Panel data analysis
 - Difference-in-Differences (DiD) estimation
-- Instrumental Variables (IV)
 - Cluster-robust standard errors
+- Instrumental Variables (IV)
+
 
 It investigates how real-time pollution monitoring can improve regulatory enforcement and reduce pollution.
 
