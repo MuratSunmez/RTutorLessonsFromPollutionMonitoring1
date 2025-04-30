@@ -1,6 +1,19 @@
 This package constitutes an interactive R problem set based on the RTutor package (https://github.com/skranz/RTutor). 
 
---- Add **brief** description of content and link to original paper ---
+This repository contains an interactive RTutor problem set based on:
+
+> Axbard, S., & Deng, Z. (2024). *Informed enforcement: Lessons from pollution monitoring in China*. American Economic Journal: Applied Economics, 16(1), 213–252.
+
+The problem set replicates the main results of the paper and covers:
+
+- Panel data analysis
+- Difference-in-Differences (DiD) estimation
+- Cluster-robust standard errors
+- Instrumental Variables (IV)
+
+
+It investigates how real-time pollution monitoring can improve regulatory enforcement and reduce pollution.
+
 
 ## 1. Installation
 
