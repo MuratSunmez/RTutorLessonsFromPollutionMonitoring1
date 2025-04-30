@@ -1,12 +1,13 @@
 Package: RTutorLessonsFromPollutionMonitoring
 Type: Package
-Title: RTutor problem set Lessons from Pollution Monitoring in China
-Version: 0.1
-Date: 2025-26-04
-Author: AUTHOR_NAME
-Maintainer: AUTHOR_NAME <author@email.net>
-Description: RTutor problem set Lessons from Pollution Monitoring in China
-License: Not yet licensed by the author. The default suggestion for licensing is
-	Problem set content: Creative Commons (CC BY-SA)
-	Package code: GPL >= 2.0
-Depends: RTutor
+Title: RTutor Problem Set: Lessons from Pollution Monitoring in China
+Version: 0.1.0
+Author: Murat Sunmez
+Maintainer: Murat Sunmez <murat.sunmez@uni-ulm.de>
+Description: An RTutor problem set based on Axbard and Deng (2024), exploring the impact of air quality monitoring on enforcement actions in China.
+License: GPL (>= 2) + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 4.0)
+Imports: RTutor, shiny, rmarkdown, knitr
+
