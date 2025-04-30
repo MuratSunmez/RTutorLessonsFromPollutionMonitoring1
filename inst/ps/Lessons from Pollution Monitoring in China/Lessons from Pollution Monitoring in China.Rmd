@@ -17,13 +17,14 @@ The original article is available [here](https://www.aeaweb.org/articles?id=10.1
 
 The problem set is published here:
 
-* `GitHub`: <https://github.com/MuratSunmez/Lessons-from-Pollution-Monitoring-in-China>
+* `GitHub`: <https://github.com/MuratSunmez/RTutorLessonsFromPollutionMonitoring>
+* `ShinyApps`: <https://muratsunmez.shinyapps.io/LessonsFromPollutionMonitoring/>
 
-In recent decades, China has experienced rapid industrial development, which has led to serious environmental problems. Although the central government introduced increasingly strict pollution regulations, enforcement at the local level often remained weak. One key reason was the lack of reliable and independent data on local pollution, which made it difficult for central authorities to oversee and evaluate local officials effectively (Zheng & Shi 2017; World Bank 2017). Similar problems have been observed in many other countries, particularly where performance data is limited or easy to manipulate (Nakagaki et al. 2012; Sandefur & Glassman 2015).
+In recent decades, China has experienced rapid industrial development, which has led to serious environmental problems. Although the central government introduced increasingly strict pollution regulations, enforcement at the local level often remained weak. One key reason was the lack of reliable and independent data on local pollution, which made it difficult for central authorities to oversee and evaluate local officials effectively (Zheng & Shi, 2017; World Bank, 2017). Similar problems have been observed in many other countries, particularly where performance data is limited or easy to manipulate (Nakagaki et al., 2012; Sandefur & Glassman, 2015).
 
-In 2015, China launched a national system of real-time air quality monitoring. The new monitors reported hourly pollution levels directly to the central government and made the data publicly available (Greenstone et al. 2022). This shift limited the ability of local governments to interfere with the data and improved the central government's ability to hold them accountable (Axbard & Deng 2024). Earlier cases of data manipulation had revealed how local incentives could distort reporting, which led to a later reform where monitor operations were handed over to external companies.
+In 2015, China launched a national system of real-time air quality monitoring. The new monitors reported hourly pollution levels directly to the central government and made the data publicly available. This shift limited the ability of local governments to interfere with the data and improved the central government's ability to hold them accountable (Axbard & Deng, 2024). Earlier cases of data manipulation had revealed how local incentives could distort reporting, which led to a later reform where monitor operations were handed over to external companies.
 
-The introduction of these monitors provided a more objective and continuous view of local environmental outcomes. It helped align local enforcement with national goals and created a new channel of accountability. Weak enforcement remains one of the biggest barriers to solving global environmental challenges. By improving transparency and limiting local discretion over data, China's monitoring reform offers important insights for improving regulatory effectiveness in other countries as well (Banerjee et al. 2008; Acemoglu et al. 2020).
+The introduction of these monitors provided a more objective and continuous view of local environmental outcomes. It helped align local enforcement with national goals and created a new channel of accountability. Weak enforcement remains one of the biggest barriers to solving global environmental challenges. By improving transparency and limiting local discretion over data, China's monitoring reform offers important insights for improving regulatory effectiveness in other countries as well (Banerjee et al., 2008; Acemoglu et al., 2020).
 
 ## Exercise Content
 
@@ -109,8 +110,8 @@ This problem set blends a variety of interactive components:
 - **Info Blocks:**  
   You’ll also find expandable info sections offering explanations on concepts, functions, or datasets relevant to a given task.
 
-- **Rewards:**
-  Completing full exercises might unlock small rewards such as summaries, fun illustrations, or helpful tips that make learning more enjoyable.
+- **Awards:**
+  Completing full exercises might unlock small awards such as summaries, fun illustrations, or helpful tips that make learning more enjoyable.
   
 You’re now ready to begin! This problem set is designed to be both educational and engaging. Have fun experimenting with code, discovering insights, and deepening your understanding along the way.
 
@@ -137,9 +138,9 @@ Together, these components provide a comprehensive foundation for understanding 
 
 
 
-China’s rapid industrialization has driven economic growth, but it has also resulted in significant environmental degradation (Kostka, 2014). For decades, pollution levels escalated due to weak enforcement of environmental regulations and local governments prioritizing economic development over environmental protection. The inconsistency between national environmental policies and their local implementation has created major accountability challenges, with enforcement often hampered by unreliable data and regulatory loopholes (Haddad, 2015, pp. 11, 15).
+China’s rapid industrialization has driven economic growth, but it has also resulted in significant environmental degradation (Kostka & Mol, 2013). For decades, pollution levels escalated due to weak enforcement of environmental regulations and local governments prioritizing economic development over environmental protection. The inconsistency between national environmental policies and their local implementation has created major accountability challenges, with enforcement often hampered by unreliable data and regulatory loopholes (Haddad, 2015, pp. 11, 15).
 
-In response to growing public concern and increased international scrutiny, the Chinese government introduced a series of far-reaching pollution control measures. Among them, the *Air Pollution Prevention and Control Action Plan of 2013* marked a significant shift in national environmental policy by tightening emission standards and introducing stronger accountability mechanisms for local governments.
+In response to growing public concern and increased international scrutiny, the Chinese government introduced a series of far-reaching pollution control measures. Among them, the *Air Pollution Prevention and Control Action Plan* of 2013 marked a significant shift in national environmental policy by tightening emission standards and introducing stronger accountability mechanisms for local governments.
 
 
 
@@ -453,7 +454,10 @@ info("Loading data with read_dta().")
 After successfully loading the library `haven`, let us use the function `read_dta()` to read the data set.
 
 
-**Task:** Use `read_dta()` to read the file *firm_enf.dta* and save it in a variable called `data`. Note: Since the file is quite large, loading may take a few moments.
+**Task:** Use `read_dta()` to read the file *firm_enf.dta* and save it in a variable called `data`. 
+
+**Note**: The file *firm_enf.dta* is quite large, so loading it may take some time. If you are working within a Shiny app, you may experience technical issues such as freezing or repeated disconnections. The exact cause is unclear, but it is likely related to the file size and how Shiny handles memory.
+Therefore, it is recommended to skip the entire *Chapter 3* when using the Shiny version of this problem set, as all exercises in this chapter rely on *firm_enf*.
 
 ```{r "7_4"}
 #use read_dta() to load "firm_enf.dta" and save it in data. 
@@ -471,10 +475,10 @@ info("Loading data with read_rds().")
 
 Now, let us load the same dataset in its *.rds* format, which offers faster loading and better performance in *R*. We use the `read_rds()` function from *R's* `readr` package.
 
-**Task:** First, load the `readr` package. Then, use `read_rds()` to read the file *firm_enf.rds* and save it in a variable called `dat`.
+**Task:** First, load the `readr` package. Then, use `read_rds()` to read the file *firm_enf_clean.rds* and save it in a variable called `dat`. Note: For future work, I have cleaned the dataset by removing unnecessary variables that are not relevant for our analysis. This ensures a streamlined dataset and cleaner output later.
 
 ```{r "7_6"}
-#Load the readr package and use read_rds() to load "firm_enf.rds" into the variable dat
+#Load the readr package and use read_rds() to load "firm_enf_clean.rds" into the variable dat
 ```
 **Note:** The *firm_enf* dataset, originally close to 2 GB in *DTA* format, shrank to less than 50 MB after being converted to an *RDS* file. 
 
@@ -482,12 +486,12 @@ With the dataset successfully loaded into `dat`, we can now take a closer look a
 
 There are multiple ways to gain an overview of a dataset. One common approach is using the `head()` function in *R*, which displays the first six rows of `dat`. Alternatively, we can examine a random subset of six rows using the `sample_n(data, rows)` function. These methods help us familiarize ourselves with the variables and better understand how the dataset is organized.
 
-**Task:** Apply `head()` to the data set you have stored in the previous task into `dat`.
+**Task:** Apply the `head()` function to `dat` and set the number of rows (`n`) to 3, in order to display only the first three observations of the dataset.
 
 ```{r "7_7"}
-#use head() to show the first six rows of dat
+#use head() to show the first three rows of dat
 ```
-These are the first six rows of our dataset, highlighting some of the key variables it contains. Each row represents a firm-level observation for a specific year and quarter. The dataset links firms to the nearest air quality monitor, combining information on their location, industry, revenues, and employment with regulatory enforcement actions and pollution exposure. This structure allows us to analyze how proximity to monitoring stations affects local environmental enforcement.
+These are the first three rows of our dataset, highlighting some of the key variables it contains. Each row represents a firm-level observation for a specific year and quarter. The dataset links firms to the nearest air quality monitor, combining information on their location, industry, revenues, and employment with regulatory enforcement actions and pollution exposure. This structure allows us to analyze how proximity to monitoring stations affects local environmental enforcement.
 
 **Monitoring Stations and Locations**
 
@@ -539,9 +543,9 @@ info("Use the pipe operator %>% for cleaner code.")
 #load the library "dplyr"
 ```
 
-After loading the `dplyr` package, we now want to filter the dataset for the year 2015 and display the first six rows.
+After loading the `dplyr` package, we now want to filter the dataset for the year 2015 and display the first three rows.
 
-**Task:** Fill in the blanks to filter the dataset for the year 2015 and display the first six rows again.
+**Task:** Fill in the blanks to filter the dataset for the year 2015 and display the first three rows again.
 
 ```{r "7_12"}
 # Filter the dataset to include only observations from the year 2015 
@@ -549,7 +553,7 @@ After loading the `dplyr` package, we now want to filter the dataset for the yea
 dat_2015 = dat %>%
   filter(year == ___)
 
-head(dat_2015)
+head(dat_2015, 3)
 ```
 
 
@@ -616,9 +620,9 @@ In this section, we want to analyze how pollution monitors were assigned to citi
 
 ```{r "9_1"}
 
-dat = read_rds("firm_enf.rds")
+dat = read_rds("firm_enf_clean.rds")
 ```
-In the previous chapter, we explored the structure of the *firm_enf* dataset. Now, we want to analyze how the placement of pollution monitors relates to enforcement actions by examining whether proximity to a monitor influences the likelihood of regulatory enforcement.
+In the previous chapter, we explored the structure of the *firm_enf_clean* dataset. Now, we want to analyze how the placement of pollution monitors relates to enforcement actions by examining whether proximity to a monitor influences the likelihood of regulatory enforcement.
 
 To do this, we will create a scatterplot showing how the probability of air pollution-related enforcement actions changes depending on a firm's distance from the nearest air quality monitor. By comparing data from the pre-monitoring period (2010–2014) with the post-monitoring period (2015–2017), we aim to identify whether the introduction of monitors led to observable shifts in enforcement patterns. This analysis will help determine if regulatory actions intensified near monitoring stations and whether monitor placement played a role in shaping enforcement trends.
 
@@ -646,7 +650,7 @@ Use the `mutate()` function from the `dplyr` package to create the new column. T
 
 dat_filtered <- dat_filtered %>%
 mutate(post = ifelse(post1 == __, "Post-policy (2015-2017)", "Pre-policy (2010-2014)"))
-head(dat_filtered)
+head(dat_filtered, 3)
  
 ```
 
@@ -766,12 +770,12 @@ In the final step, we want to analyze pollution levels and trends based on Aeros
 **Task:** Just `check` the following chunk to visualize annual AOD levels from 2010 to 2017 across three zones to compare pollution trends before and after monitor installation.
 
 ```{r "9_13"}
-pm <- read_dta("pm.dta") %>%
+pm <- read_rds("pm.rds") %>%
   select(-pm25) %>%
   rename(pm3 = pm_indirect, pm2 = pm_direct) %>%
   pivot_longer(starts_with("pm"), names_to = "group", values_to = "pm")
 
-pix <- read_dta("pix.dta")
+pix <- read_rds("pix.rds")
 combined_data <- bind_rows(pm, pix) %>%
   mutate(group = replace_na(group, "1"),
          time = interaction(year, month),
@@ -809,7 +813,7 @@ Building on our previous analyses, we now turn to a difference-in-differences (D
 
 To further quantify this effect, we now apply a simplified DiD specification, comparing firms located within 10 km of a monitor to those at a greater distance. This allows us to isolate the causal impact of monitoring presence on enforcement activity by leveraging variation across both time and distance.
 
-The difference-in-differences (DiD) estimator is a widely used method for identifying causal effects by comparing changes in outcomes over time between a treatment and a control group, under the assumption that both would have followed similar trends in the absence of treatment (Bertrand, Duflo, & Mullainathan, 2004, p. 1).
+The difference-in-differences (DiD) estimator is a widely used method for identifying causal effects by comparing changes in outcomes over time between a treatment and a control group, under the assumption that both would have followed similar trends in the absence of treatment (Bertrand, Duflo, & Mullainathan, 2004, p. 249).
 
 
 Quiz: Which firms are defined as the treatment group in the difference-in-differences (DiD) framework used in this study? This was briefly discussed in the previous chapter.
@@ -870,10 +874,10 @@ To keep things clear, we’ll break the process into two steps. First, we calcul
 Before we proceed, we’ll load the dataset. From this point on, we’ll be working with a pre-filtered version that I’ve already cleaned and transformed based on the adjustments introduced in the previous chapter. Variables such as the minimum distance to the nearest monitor, the monitor start year, and other key filters have already been applied. This allows us to skip repetitive preprocessing steps and focus directly on the analysis.
 
 
-**Task:** Just `check` the chunk to save the data set in `dat`.
+**Task:** Just `check` the chunk that saves the filtered data set into `dat`.
 
 ```{r "10_1"}
-#read firm_enf.rds with readRDS() and save it in dat
+#read firm_enf.rds with read_rds() and save it in dat
 ```
 
 We now prepare the dataset for the difference-in-differences (DiD) analysis by generating the key interaction variable `min_dist_10_post1`. This variable combines two binary indicators: `min_dist_10`, which identifies firms located within 10 kilometers of a pollution monitor, and `post1`, which marks observations from the period after monitoring was introduced. The interaction equals one only for firms in the treatment group during the post-monitoring period. It serves as the core variable in our DiD specification, capturing the impact of pollution monitoring on enforcement actions for nearby firms.
@@ -927,6 +931,8 @@ Before moving on to the final step of computing the DiD estimator, let's quickly
 **Task:**  Click on `check` to show the values of the formula`s components:
 
 ```{r "10_6"}
+library(kableExtra)
+
 data.frame(
   "PreExp.Treat" = round(y_pre_tr, 5), 
   "Exp.Treat" = round(y_exp_tr, 5), 
@@ -993,9 +999,9 @@ In the next section, we will prepare the data and estimate the DiD effect using 
 ## Exercise 3.3 -- Estimating the DiD Model Using Regression 
 
 
-After introducing the difference-in-differences (DiD) approach and calculating the treatment effect manually, we now turn to its implementation using a regression framework. While the manual calculation provides an intuitive understanding of the method, regression-based estimation offers greater flexibility and precision, making it the standard in applied empirical research (Angrist & Pischke, 2009, pp. 18, 27).
+After introducing the difference-in-differences (DiD) approach and calculating the treatment effect manually, we now turn to its implementation using a regression framework. While the manual calculation provides an intuitive understanding of the method, regression-based estimation offers greater flexibility and precision, making it the standard in applied empirical research (Angrist & Pischke, 2008, pp. 18, 26).
 
-Applying linear regression allows us to estimate the treatment effect while also generating key statistical measures such as standard errors, p-values, and confidence intervals. These are essential for assessing the robustness and significance of the results. To ensure valid inference, we cluster standard errors at the city level to account for within-city correlation in enforcement behavior.
+Applying linear regression allows us to estimate the treatment effect while also generating key statistical measures such as standard errors, p-values, and confidence intervals. These are essential for assessing the robustness and significance of the results. 
 
 Another key advantage of the regression approach is the ability to control for additional variables that may influence the outcome. While the manual DiD calculation only considers time and treatment group status, actual enforcement decisions may be affected by factors such as economic conditions, weather patterns, or political dynamics. By including fixed effects for firms, industries, or provinces, the regression model allows us to better isolate the causal effect of pollution monitoring.
 
@@ -1018,7 +1024,7 @@ To ensure comparability with the manual DiD estimator from the previous chapter,
 # Create DiD interaction term: treatment group (≤10 km) × post-monitoring period
 ```
 
-To begin, we estimate the most basic DiD model, identical to our manual calculation, without any additional fixed effects or control variables. This ensures a direct comparison between the two methods.
+To begin, we estimate a basic DiD model, identical to our manual calculation, without any additional fixed effects or control variables. This ensures a direct comparison between the two methods.
 
 The regression equation we use is:
 
@@ -1139,7 +1145,7 @@ The regression results provide strong evidence that pollution monitoring increas
 
 **Summary**
 
-This section estimated a basic DiD regression to examine the impact of pollution monitoring on enforcement activity. The key interaction term yielded a statistically significant coefficient of **0.00248**, indicating that firms near monitors were more likely to face enforcement after monitoring was introduced. This matches the manually computed DiD estimate and provides initial causal evidence. However, the model did not yet account for city-level clustering or unobserved heterogeneity, which will be addressed in the following steps using cluster-robust standard errors and fixed effects.
+This section estimated a basic DiD regression to examine the impact of pollution monitoring on enforcement activity. The key interaction term yielded a statistically significant coefficient of **0.00248**, indicating that firms near monitors were more likely to face enforcement after monitoring was introduced. This matches the manually computed DiD estimate and provides initial causal evidence. However, the model has not yet accounted for potential correlations in the error terms or unobserved heterogeneity, which will be addressed in the following steps by using clustered standard errors and including fixed effects.
 
 ## Exercise 3.4 -- Cluster-Robust Standard Errors
 
@@ -1153,9 +1159,9 @@ $$
 y = Xβ + ε,
 $$
 
-where y is the vector of observed outcomes, X is the matrix of regressors, β is the parameter vector, and ε is the vector of error terms.
+where *y* is the vector of observed outcomes, *X* is the matrix of regressors, *β* is the parameter vector, and *ε* is the vector of error terms.
 
-The variance of the Ordinary Least Squares (OLS) estimator $\hat{\beta}$, conditional on X, is given by (White, 1980, p. 820):
+Following White (1980, pp. 820–822), the asymptotic variance of the Ordinary Least Squares (OLS) estimator $\hat{\beta}$, conditional on X, is given by:
 
 $$
 \text{Var}(\hat{\beta}) = (X^T X)^{-1} B (X^T X)^{-1},
@@ -1167,7 +1173,7 @@ $$
 B = X^T Var(ε \mid X) X.
 $$
 
-In classical Ordinary Least Squares theory, it is typically assumed that the error terms are **homoskedastic** and **independent**. This implies that $\text{Var}(\varepsilon \mid X) = \sigma^2 I$ (Greene, 2012, p. 63), where $\sigma^2$ is constant across observations and $I$ is the identity matrix. However, this assumption is often violated in the context of grouped or panel data. For example, firms within the same city may be subject to correlated shocks or unobserved regional factors. In such cases, clustering standard errors at the group level leads to more reliable inference (Wooldridge, 2010).
+In classical Ordinary Least Squares theory, it is typically assumed that the error terms are **homoskedastic** and **independent**. This implies that $\text{Var}(\varepsilon \mid X) = \sigma^2 I$ (Greene, 2012, p. 62), where $\sigma^2$ is constant across observations and $I$ is the identity matrix. However, this assumption is often violated in the context of grouped or panel data. For example, firms within the same city may be subject to correlated shocks or unobserved regional factors. In such cases, clustering standard errors at the group level leads to more reliable inference (Cameron & Miller, 2015, pp. 318–321).
 
 Assume the data is divided into C clusters. Then, the model for each cluster c = 1, ..., C is
 
@@ -1175,15 +1181,15 @@ $$
 y_c = X_c β + ε_c,
 $$
 
-where yc, Xc, and εc refer to the outcome, regressors, and error term within cluster c.
+where *yc*, *Xc*, and *εc* refer to the outcome, regressors, and error term within cluster c.
 
-The **cluster-robust variance estimator** is then given by (Cameron & Miller, 2015, p. 16):
+The **cluster-robust variance estimator** is then given by (Cameron & Miller, 2015, p. 324):
 
 $$
 Var_{cluster}(\hat{\beta}) = (X^T X)^{-1} \left( \sum_{c=1}^{C} X_c^T \hat{u}_c \hat{u}_c^T X_c \right) (X^T X)^{-1},
 $$
 
-where ûc denotes the residuals for cluster c.
+where *ûc* denotes the residuals for cluster c.
 
 This estimator allows for unrestricted correlation of residuals within clusters while assuming independence across clusters. It yields consistent standard errors as the number of clusters C grows large. Clustered standard errors are particularly important when the treatment is assigned at the cluster level or when policy implementation is organized by groups such as cities, regions, or institutions (Cameron & Miller, 2015).
 
@@ -1201,7 +1207,7 @@ dat = readRDS("filtered_firm_enf.rds")
 The assumptions of independent error terms and homoskedasticity are fundamental in linear regression because they ensure that the estimated standard errors correctly reflect the variability of the coefficient estimates. When these conditions are met, standard errors provide valid and unbiased measures of statistical uncertainty.
 
 If independence is violated, as is often the case in clustered or time-dependent data, residuals can become correlated. This typically leads to underestimated standard errors and increases the risk of drawing incorrect conclusions. Similarly, when the variance of the error terms differs across observations, known as heteroskedasticity, standard errors may not adequately capture the true variability in the data.
-Ignoring these violations can result in invalid inference, such as mistakenly identifying insignificant effects as statistically significant (Angrist & Pischke, 2009, pp. 221ff.).
+Ignoring these violations can result in invalid inference, such as mistakenly identifying insignificant effects as statistically significant (Angrist & Pischke, 2008, pp. 221ff.).
 
 Remember, we are still considering the difference-in-differences (DiD) regression model:
 
@@ -1281,7 +1287,7 @@ Quiz: Why does this plot support the use of cluster-robust standard errors?
 answer.quiz("Heteroskedasticity.boxplot2")
 ```
 
-The boxplot demonstrates clear variation in the spread of residuals across the five selected cities. While some cities exhibit a relatively narrow distribution of residual standard deviations, others display a considerably wider spread, often with visible outliers. This pattern suggests a violation of the classical homoskedasticity assumption, which assumes constant variance of the error terms. Instead, the evidence points to heteroskedasticity, indicating that residual variability differs across clusters.
+The boxplot demonstrates clear variation in the spread of residuals across the five selected cities. While some cities exhibit a relatively narrow distribution of residual standard deviations, others display a considerably wider spread, often with visible outliers. This pattern suggests a violation of the classical homoskedasticity assumption, which requires constant variance of the error terms. The results indicate signs of heteroskedasticity, as the variability of the residuals differs across clusters.
 
 Moreover, since environmental enforcement is shaped by local policy decisions, administrative structures, and potentially unobserved political factors, it is plausible that error terms are correlated within cities. Ignoring this intra-cluster correlation can result in underestimated standard errors in standard OLS models, thereby inflating the statistical significance of estimated effects and leading to incorrect inferences.
 
@@ -1317,7 +1323,7 @@ reg_feol <- feols(any_air ~ post1 + min_dist_10 + post1:min_dist_10, data = dat,
 Now, we will display the results using the function `summary()`.
 
 
-**Task:** Press `check` to display the regression results stored in `reg_clust` using the `summary()` function.
+**Task:** Press `check` to display the regression results stored in `reg_feol` using the `summary()` function.
 
 ```{r "12_10"}
 # Show the regression results
@@ -1432,7 +1438,7 @@ By visually inspecting the pre-2015 trends, we assess whether the assumption hol
 
 Let’s now check this assumption by visualizing the pre-policy enforcement trends for both groups.
 
-The data preparation has already been completed, so we can now directly load the processed dataset. As in the previous section, we constructed an interaction term (`min_dist_10_post1`) to capture the treatment effect. This variable combines the treatment group indicator (`min_dist_10`) with the post-treatment period (`post1`), allowing us to estimate the differential effect after the intervention.
+I have already completed the data preparation, so we can now directly load the processed dataset. As in the previous section, we constructed an interaction term (`min_dist_10_post1`) to capture the treatment effect. This variable combines the treatment group indicator (`min_dist_10`) with the post-treatment period (`post1`), allowing us to estimate the differential effect after the intervention.
 
 To visualize trends in enforcement, we calculated the average enforcement probability (`any_air`) for each year and treatment group. This was done by grouping the data by `year` and `min_dist_10`, computing the mean of the outcome variable while excluding missing values. The resulting summary dataset is now ready for visualization and further analysis.
 
@@ -1521,7 +1527,7 @@ Quiz: What do you think is the primary purpose of fixed effects in econometric m
 answer.quiz("fixed_effects_quiz")
 ```
 
-The primary purpose of fixed effects is to eliminate bias caused by unobserved, time-invariant factors. Many observational studies suffer from **omitted variable bias**, where certain characteristics that influence the dependent variable are not included in the regression but remain correlated with the explanatory variables. This omission can lead to misleading conclusions about causality. As noted by Baltagi (2021, p. 49) in Econometric Analysis of Panel Data, fixed effects models effectively address this issue by differencing out these unobserved effects, thereby providing more reliable estimates of the variables of interest.
+The primary purpose of fixed effects is to eliminate bias caused by unobserved, time-invariant factors. Many observational studies suffer from **omitted variable bias**, where certain characteristics that influence the dependent variable are not included in the regression but remain correlated with the explanatory variables. Such omissions can lead to misleading conclusions about causal relationships. Fixed effects estimation overcomes this issue by eliminating unobserved, time-invariant heterogeneity and allowing individual-specific components to be arbitrarily correlated with the regressors, thereby ensuring consistent estimation (Wooldridge, 2010, p. 266).
 
 To improve identification, we now incorporate fixed effects into the regression model. These account for unobserved factors that remain constant within firms, industries, or provinces over time and allow us to focus on variation that reflects the impact of pollution monitoring.
 
@@ -1622,7 +1628,7 @@ mean_any_air <- round(mean(____________, na.rm = TRUE), 4)
 
 ```
 
-Now that we have calculated the mean of the outcome variable `(any_air)`, we can present the regression results. The comparison table I created displays the standard OLS model, the OLS model with clustered standard errors at the city level (as estimated in previous chapters), and our new model with fixed effects. This side-by-side comparison allows us to assess how different modeling choices influence the estimated treatment effect and evaluate the robustness of our results.
+Now that we have calculated the mean of the outcome variable `(any_air)`, we can present the regression results. For this purpose, I created a comparison table that presents the results from the standard OLS model and the OLS model with clustered standard errors at the city level, both of which were analyzed in previous chapters, alongside the newly estimated fixed effects model. This structured comparison enables us to examine how different modeling choices influence the estimated treatment effect and to evaluate the robustness of our empirical findings.
 
 **Task:** Simply press `check` to display the regression results.
 
@@ -1662,7 +1668,8 @@ modelsummary(
 ```
 
 
-At this stage, our results are fully transparent and closely aligned with the findings reported by the authors. In the earlier specification without fixed effects, we estimated a treatment effect of **0.00248**. After incorporating fixed effects, the estimate increases to **0.0033**. Moreover, the average enforcement probability of **0.0046** matches the value reported in the original study, confirming both the consistency and robustness of our estimation approach. For reference, the mean of the dependent variable `(any_air)` has been added as a footnote to the regression table.
+At this stage, our results are fully transparent and closely aligned with the findings reported by the authors. In the earlier specification without fixed effects, we estimated a treatment effect of **0.00248**. After incorporating fixed effects, the estimate increases to **0.0033**. Moreover, the average enforcement probability of **0.0046** matches the value reported in the original study, confirming both the consistency and robustness of our estimation approach. 
+**Note**: For reference, the mean of the dependent variable `(any_air)` has been added as a footnote to the regression table.
 
 
 Quiz: By what percentage does the presence of a monitor increase the probability of an air-pollution-related enforcement action?
@@ -1804,7 +1811,7 @@ answer.quiz("Monitor Assignment Criteria")
 
 This table illustrates the criteria used to assign monitors to cities based on population size and the extent of built-up areas. Cities with fewer than 250,000 people and a built-up area smaller than 20 km² receive one monitor, while those with populations between 250,000 and 500,000 and built-up areas of 20–50 km² are assigned two monitors. Cities with 500,000 to 1 million residents and built-up areas of 50–100 km² receive four monitors, whereas the largest cities, with populations between 1 and 2 million and built-up areas of 100–200 km², are allocated six monitors.
 
-To provide a clearer overview of how cities are distributed across the monitor assignment groups defined in the table above, we visualize the data in a bubble chart. In this chart, the number of cities per group is shown on the y-axis, while bubble size indicates the minimum number of required monitors and bubble color reflects the built-up area. This visual summary supports a more intuitive understanding of how the criteria translate into group-level monitoring requirements.
+To provide a clearer overview of how cities are distributed across the monitor assignment groups defined in the table above, I created a bubble chart to visualize the data. In this chart, the number of cities per group is shown on the y-axis, while bubble size indicates the minimum number of required monitors and bubble color reflects the built-up area. This visual summary supports a more intuitive understanding of how the criteria translate into group-level monitoring requirements.
 
 **Task:** Press `check` to generate a bubble chart of city groups by monitor count and built-up area.
 
@@ -1837,16 +1844,16 @@ Building on the monitor assignment criteria, we now turn our attention to the re
 
 We now want to provide a detailed illustration of this relationship, showing how an increase in the number of monitors is associated with greater coverage of high-pollution activities. This is measured as the share of a city's high-polluting firms' revenue located within 10 kilometers of a monitor, adjusted for firm size using data from the *Environmental Survey and Reporting* (ESR) database.
 
-**Task:** Press `check` to load the datasets *city_info.rds* and *share.rds* into the variables `city_info` and `share_data`, and display the first few rows of each dataset using `head()`.
+**Task:** Press `check` to load the datasets *city_info.rds* and *share.rds* into the variables `city_info` and `share_data`, and display the first three rows of each dataset using `head()`.
 
 ```{r "15_3"}
 #read city_info.rds and share.rds with read_rds() and save it
 
 city_info <- read_rds("city_info.rds")
-head(city_info)
+head(city_info, 3)
 
 share_data <- read_rds("share.rds")
-head(share_data)
+head(share_data, 3)
 ```
 
 The *city_info.rds* dataset provides demographic, geographic, and economic information at the city level. Key variables include the city identifier `(city_id)`, the number of installed monitors `(number)`, population size `(pop)`, built-up area `(area)`, gross domestic product `(GDP)`, and distance to the coast `(disttocoast)`. It also contains geographic coordinates `(env_lon, env_lat, centroid_lon, centroid_lat)` as well as predicted monitor assignments `(pred_number1, pred_number2)`, offering insights into how city characteristics may influence monitoring intensity.
@@ -1927,15 +1934,18 @@ The vertical error bars in the graph represent 95% confidence intervals, showing
 
 To causally identify the impact of an additional monitor on air pollution, we rely on the assumption that cities with different numbers of monitors would have followed similar pollution trajectories in the absence of the intervention. A critical first step is to assess the plausibility of this assumption. To that end, we begin by examining trends in Aerosol Optical Depth (AOD) for different groups of cities, categorized according to the minimum number of monitors assigned by the central government.
 
-As a second descriptive analysis in this chapter, we will plot the de-meaned city-level AOD trends for four monitor groups. This allows us to explore the evolution of air pollution over time and to visually inspect whether systematic differences in trends exist across these groups. While this does not constitute a formal test, it provides useful insight into the temporal dynamics of pollution across cities with varying monitoring intensity and helps lay the groundwork for our identification strategy.
+As a second descriptive analysis in this chapter, we will plot the de-meaned city-level AOD trends for our four monitor groups. This allows us to explore the evolution of air pollution over time and to visually inspect whether systematic differences in trends exist across these groups. While this does not constitute a formal test, it provides useful insight into the temporal dynamics of pollution across cities with varying monitoring intensity and helps lay the groundwork for our identification strategy.
 
-**Task:** Press `check` to load the dataset *city_pm.rds* using `read_rds()` and store it in the variable `city_pm`. Then display the first few rows with `head()` to preview the structure of the data.
+**Task:** Press `check` to load the dataset *city_pm_clean.rds* using `read_rds()` and store it in the variable `city_pm`. Then display the first few rows with `head()` to preview the structure of the data.
 
 ```{r "15_7"}
 # Load the city-level pollution dataset and preview the first rows
 ```
 
-The `city_pm` file contains variables such as `pm25` (particulate matter values), `city_id` (city identifiers), `number_iv` (a grouping variable indicating the number of monitors), and `year` (year of observation).
+**Note**: I have cleaned the dataset again by removing unnecessary environmental, centroid, and coastal distance variables to ensure a cleaner output and better presentation.
+
+The *city_pm_clean.rds* file contains variables such as `pm25` (particulate matter values), `city_id` (city identifiers), `number_iv` (a grouping variable indicating the number of monitors), and `year` (year of observation).
+
 
 We aim to calculate de-meaned values to remove time-invariant, city-specific effects from the `pm25` variable. Specifically, for each city `(city_id)`, we subtract the city-level mean of `pm25` from each observation. This process isolates the within-city variation in `pm25` over time by removing persistent differences across cities caused by factors such as geography, infrastructure, or industry that remain constant over time. These de-meaned values highlight how `pm25` deviates from the city-specific average, making it easier to analyze trends within cities.
 
@@ -1953,7 +1963,7 @@ city_pm <- city_pm %>%
 Next, we want to group the data by `number_iv` (categories or groups, e.g., 1, 2, 4, 6) and year to calculate the average residuals `(pm_res)` for each combination of `group` and `year`. This involves summarizing the data by computing the mean of `pm_res` within each `group` and `year`.
 
 
-By de-meaning the data, we focus only on the time-varying component of pollution within each city. This helps us analyze trends or impacts (e.g., of additional monitors) without bias from static city-specific characteristics, ensuring that any observed changes are not driven by these unchanging differences but instead reflect meaningful variation over time.
+By de-meaning the data, we focus only on the time-varying component of pollution within each city. This helps us analyze trends or impacts (such as the effect of additional monitors) without bias from static city-specific characteristics, ensuring that any observed changes are not driven by these unchanging differences but instead reflect meaningful variation over time.
 
 
 **Task:** Group the dataset by `number_iv` and `year`, and then calculate the average of the de-meaned pollution values `(pm_res)` for each group-year combination. Store the result in a new dataset called `collapsed_data` and display the first few rows using `head()`.
@@ -2237,7 +2247,7 @@ summarise(measurement = mean(pm_cv, na.rm = TRUE), .groups = "drop")
 As before, we now compute the average values for annotations and generate the parallel trends plot. 
 This step helps us visually assess whether the treatment and control groups follow similar trends before the intervention, now incorporating control variables to refine the analysis.
 
-I have positioned the FE model from above alongside the FE + CV model to provide a clearer comparison and better evaluate how incorporating control variables influences the parallel trends.
+I have positioned the parallel trends model with FE from above alongside the FE + CV model to provide a clearer comparison and better evaluate how incorporating control variables influences the parallel trends.
 
 **Task:** Just `check` the following chunk to display the results.
 
@@ -2317,7 +2327,7 @@ To begin, we first create the interaction term for the difference-in-differences
 
 ```{r "16_11"}
 # Create the interaction term for the DiD estimator
-dat <- read_dta("city_pm.dta") %>%
+dat <- read_rds("city_pm.rds") %>%
   mutate(Monitor_Effect = post1 * number)
 ```
 
@@ -2465,7 +2475,7 @@ To address potential endogeneity concerns such as reverse causality or omitted v
 
 One potential concern in estimating the causal impact of pollution monitoring on enforcement and pollution reduction is the endogeneity of monitor placement. If cities with stricter environmental enforcement policies or higher pollution levels were more likely to receive more monitors, our estimates may be biased. To address this concern, we implement an instrumental variable (IV) strategy, leveraging the exogenous assignment of monitors by the central government.
 
-The instrumental variable (IV) approach is a method used in econometrics to address the issue of endogeneity, which occurs when an explanatory variable is correlated with the error term in a regression. Endogeneity can arise due to omitted variable bias, reverse causality, or measurement error, leading to biased estimates. The IV approach helps to obtain consistent estimators by using instruments that are correlated with the endogenous explanatory variables but uncorrelated with the error term (Angrist & Pischke, 2009, p. 84).
+The instrumental variable (IV) approach is a method used in econometrics to address the issue of endogeneity, which occurs when an explanatory variable is correlated with the error term in a regression. Endogeneity can arise due to omitted variable bias, reverse causality, or measurement error, leading to biased estimates. The IV approach helps to obtain consistent estimators by using instruments that are correlated with the endogenous explanatory variables but uncorrelated with the error term (Angrist & Pischke, 2008, pp. 83–85).
 
 In the context of this study, one concern is that cities may have strategically chosen the number of monitors based on unobserved factors, such as expected future pollution levels or enforcement capacity. If this is the case, a simple difference-in-differences (DiD) approach may yield biased results because the treatment variable (number of monitors) is not randomly assigned.
 
@@ -2498,36 +2508,36 @@ In this equation, $Y$ denotes the dependent variable, $X$ is the endogenous expl
 
 
 
-The endogeneity problem arises when X is correlated with $\epsilon$ :
+The endogeneity problem arises when *X* is correlated with $\epsilon$ :
 
 $$
 \text{Cov}(X, \epsilon) \neq 0
 $$
 
 This correlation leads to biased and inconsistent estimates when using Ordinary Least Squares (OLS).
-To resolve endogeneity, we use an instrumental variable (IV), denoted as Z, that satisfies two key conditions:
+To resolve endogeneity, we use an instrumental variable (IV), denoted as *Z*, that satisfies two key conditions:
 
 **1. Relevance Condition**  
 
-- The instrument Z must be correlated with X:
+- The instrument *Z* must be correlated with *X*:
 
 $$
 \text{Cov}(Z, X) \neq 0
 $$
 
-This ensures that Z influences X sufficiently to explain variation.
+This ensures that *Z* influences *X* sufficiently to explain variation.
 
 **2. Exogeneity Condition**  
 
-- The instrument Z must be uncorrelated with the error term $\epsilon$:
+- The instrument *Z* must be uncorrelated with the error term $\epsilon$:
 
 $$
 \text{Cov}(Z, \epsilon) = 0
 $$
 
-This guarantees that Z affects Y only through X and is not directly related to other unobserved factors. These conditions are essential for the validity of the IV approach and are thoroughly discussed in econometric literature. For a comprehensive treatment, see Wooldridge (2010, pp. 83ff.).
+This guarantees that *Z* affects *Y* only through *X* and is not directly related to other unobserved factors. These conditions are essential for the validity of the IV approach and are thoroughly discussed in econometric literature. For a comprehensive treatment, see Wooldridge (2010, pp. 83ff.).
 
-I constructed a **Directed Acyclic Graph (DAG)** to support the identification strategy. The graph summarizes the key causal relationships in the model. The number of installed monitors X may be endogenous due to unobserved city-specific factors U that also influence enforcement or pollution outcomes Y. To address this, the centrally assigned number of monitors Z is used as an instrument. Since Z is based on predetermined allocation rules and unrelated to local conditions, it provides exogenous variation in X. The DAG illustrates how Z affects Y only through X, supporting the validity of the IV approach.
+To further clarify the identification strategy proposed by the authors, I constructed a **Directed Acyclic Graph (DAG)**. The graph summarizes the key causal relationships in the model. The number of installed monitors, *X*, may be endogenous due to unobserved city-specific factors, *U*, that also influence enforcement or pollution outcomes, *Y*. To address this issue, the centrally assigned number of monitors, *Z*, is used as an instrument. Since *Z* is based on predetermined allocation rules and is unrelated to local conditions, it provides exogenous variation in *X*. The DAG illustrates that *Z* affects YY only through *X*, supporting the validity of the IV approach discussed by the authors.
 
 
 **Task:** Click `check` to generate the instrumental variable (IV) DAG. 
@@ -2580,7 +2590,7 @@ plot(g,
 ```
 
 
-Quiz: Why is the instrument Assigned Monitors Z considered valid in the context of this model?
+Quiz: Why is the instrument Assigned Monitors *Z* considered valid in the context of this model?
 
 (1) Because Assigned Monitors Z influence the number of Installed Monitors X, and X affects the Outcome Y, while Z is assumed to be independent of unobserved confounders U.
 (2) Because Assigned Monitors Z directly determine the Outcome Y, such as pollution levels or enforcement intensity.
@@ -2593,11 +2603,11 @@ answer.quiz("Understanding the IV DAG")
 ```
 
 
-The directed acyclic graph (DAG) illustrates the logic behind the instrumental variable (IV) approach. The number of assigned monitors, denoted by Z, affects the number of installed monitors, X. In turn, X influences the outcome variable Y, such as air pollution levels or the intensity of enforcement. The validity of this identification strategy rests on two key assumptions. First, Z must be relevant, meaning it must be correlated with X. Second, Z must be exogenous, meaning it affects Y only through its impact on X and is uncorrelated with unobserved determinants of Y, denoted by U.
+The directed acyclic graph (DAG) illustrates the logic behind the instrumental variable (IV) approach. The number of assigned monitors, denoted by *Z*, affects the number of installed monitors, *X*. In turn, *X* influences the outcome variable *Y*, such as air pollution levels or the intensity of enforcement. The validity of this identification strategy rests on two key assumptions. First, *Z* must be relevant, meaning it must be correlated with *X*. Second, *Z* must be exogenous, meaning it affects *Y* only through its impact on *X* and is uncorrelated with unobserved determinants of *Y*, denoted by *U*.
 
-These assumptions appear plausible in our setting. Monitor assignment was determined centrally using predetermined criteria like population size and geographic area, reducing the likelihood of strategic placement. Moreover, Z has no direct channel through which it could affect enforcement or pollution outcomes, satisfying the exclusion restriction.
+Monitor assignment was determined centrally using predetermined criteria like population size and geographic area, reducing the likelihood of strategic placement. Moreover, *Z* has no direct channel through which it could affect enforcement or pollution outcomes, satisfying the exclusion restriction.
 
-We proceed under the assumption that Z is a valid instrument, providing exogenous variation in monitoring intensity. In the next step, we formally evaluate these conditions and estimate the causal effect of installed monitors on outcomes using the Two-Stage Least Squares (2SLS) method.
+We proceed under the assumption that *Z* is a valid instrument, providing exogenous variation in monitoring intensity. In the next step, we formally evaluate these conditions and estimate the causal effect of installed monitors on outcomes using the Two-Stage Least Squares (2SLS) method.
 
 
 ## Two-Stage Least Squares (2SLS) 
@@ -2622,7 +2632,7 @@ $$
 Y = \beta_0 + \beta_1 \hat{X} + \gamma W + u
 $$
 
-This ensures that only the exogenous component of X is used in estimation. A detailed treatment of the Two-Stage Least Squares (2SLS) method, including its assumptions and implementation, can be found in Angrist & Imbens (1995, pp. 431–442) and Angrist & Pischke (2009, pp. 90–91).
+This ensures that only the exogenous component of X is used in estimation. A detailed treatment of the Two-Stage Least Squares (2SLS) method, including its assumptions and implementation, can be found in Angrist & Imbens (1995, pp. 431–442) and Angrist & Pischke (2008, pp. 90–91).
 
 We first begin by analyzing the instrument relevance condition, as this is the first requirement for a valid instrumental variable. The relevance condition states that the instrument must have a non-zero impact on the endogenous variable.
 
@@ -2645,7 +2655,7 @@ Thus, we have strong theoretical justification that the instrument is relevant. 
 **Task:** Just `check` the chunk to load the dataset.
 
 ```{r "17_2"}
-#read city_enf.rds with read_rds() and save it in city_enf
+#read city_pm.rds with read_rds() and save it in dat
 
 dat <- read_rds("city_pm.rds")
 ```
@@ -2686,7 +2696,7 @@ $$
 F = \left(\frac{\beta}{SE_{\beta}}\right)^2
 $$
 
-This formula assesses the strength of the instrument by evaluating the significance of its coefficient in the first-stage regression. As discussed by Staiger and Stock (1997, p.558), a first-stage F-statistic above 10 is widely regarded as a benchmark for identifying strong instruments.
+This formula assesses the strength of the instrument by evaluating the significance of its coefficient in the first-stage regression. As discussed by Staiger and Stock (1997, p.557), a first-stage F-statistic above 10 is widely regarded as a benchmark for identifying strong instruments.
 
 
 
@@ -2721,7 +2731,7 @@ This assumption is supported by the following points:
 
 * *No Evidence of Strategic Placement:* The authors examine the determinants of monitor location and find that placement is unrelated to prior enforcement activity and that there are no differential pre-trends in enforcement for firms at varying distances from the monitor. This supports the validity of the identification strategy.
 
-* *No Differential Pre-Trends:* Using difference-in-differences and event study designs, Axbard and Deng (2024) show that firms located near and far from monitors followed similar enforcement and pollution trends before the monitors were installed, suggesting that monitor assignment was not correlated with unobserved determinants of the outcomes.
+* *No Differential Pre-Trends:* Using a difference-in-differences design, Axbard and Deng (2024) show that firms located near and far from monitors followed similar enforcement and pollution trends before the monitors were installed, suggesting that monitor assignment was not correlated with unobserved determinants of the outcomes.
 
 Together, these factors provide strong support for the exogeneity of `number_iv` and the credibility of our IV estimates. Since we rely on a single instrument, formal tests of exogeneity are not feasible. While we substantiate the assumption with institutional context and empirical evidence, it cannot be directly verified and is therefore not examined further empirically.
 
@@ -2783,7 +2793,7 @@ This comparison is important for evaluating whether potential endogeneity in mon
 
 ```{r "17_8"}
 #  Load DiD model for PM2.5 
-dat_pm <- read_dta("city_pm.dta")
+dat_pm <- read_rds("city_pm.rds")
 
 dat_pm$Monitor_Effect <- dat_pm$post1 * dat_pm$number
 
@@ -2791,8 +2801,8 @@ did_model_1 <- feols(pm25 ~ Monitor_Effect + post1 * area + post1 * pop |
                      city_id + year + month + pred + tem_meand + age_year + incentive2 * time,
                      data = dat_pm, cluster = "city_id")
 
-# Load DiD model for enforcement (Table 3B)
-dat_enf <- read_dta("city_enf.dta")
+# Load DiD model for enforcement 
+dat_enf <- read_rds("city_enf.rds")
 
 dat_enf$Monitor_Effect <- dat_enf$post1 * dat_enf$number
 
@@ -2994,7 +3004,7 @@ In China's centralized political system, the central government sets environment
 info("Effective Top-Down Accountability: Evidence from Uganda.")
 ```
 
-In China, the career advancement of local officials is closely tied to their economic performance, as promotions and terminations are significantly influenced by provincial growth outcomes (Li & Zhou, 2005, p. 1747). However, these political incentives are not uniform. They vary depending on the official’s career stage, age-related promotion constraints, and the national political calendar. Promotion opportunities are strongly influenced by the five-year cycle of the *National People’s Congress* (NPC), with the highest probability of promotion occurring in the final year of each cycle. In addition, mayors of prefecture-level cities in China face two institutional constraints: a mandatory retirement age of 60 and a requirement to serve at least three years in office to qualify for promotion. As a result, officials aged 57 or older at the time of the National People's Congress face a discontinuously lower probability of promotion and thus weaker performance incentives (Xi, Yao, & Zhang, 2018, p. 1048).
+In China, the career advancement of local officials is closely tied to their economic performance, as promotions and terminations are significantly influenced by provincial growth outcomes (Li & Zhou, 2005, pp. 1746-1747). However, these political incentives are not uniform. They vary depending on the official’s career stage, age-related promotion constraints, and the national political calendar. Promotion opportunities are strongly influenced by the five-year cycle of the *National People’s Congress* (NPC), with the highest probability of promotion occurring in the final year of each cycle. In addition, mayors of prefecture-level cities in China face two institutional constraints: a mandatory retirement age of 60 and a requirement to serve at least three years in office to qualify for promotion. As a result, officials aged 57 or older at the time of the National People's Congress face a discontinuously lower probability of promotion and thus weaker performance incentives (Xi, Yao, & Zhang, 2018, p. 1048).
 
 This age-based constraint affects policy enforcement behavior, as officials close to the promotion threshold have stronger incentives to align with central mandates, while those beyond this window may exhibit weaker compliance efforts. The introduction of real-time environmental monitoring enhances the central government’s ability to track policy enforcement, but its effectiveness depends on whether officials have career incentives to respond.
 
@@ -3159,7 +3169,7 @@ Having shown that promotion incentives and accountability mechanisms play a key 
 
 This final chapter examines whether separating the responsibilities for information provision and enforcement can improve data quality, limit opportunities for manipulation, and ultimately lead to better environmental governance outcomes.
 
-Although performance-based incentives are widely used to mitigate principal–agent problems, they can unintentionally encourage strategic behavior, including the manipulation of performance metrics to meet targets. This risk is particularly acute when the same actors are responsible both for enforcing regulations and for generating the data used to evaluate their own performance. Evidence suggests that institutional separation between information providers and enforcers can increase data integrity and reinforce accountability mechanisms (Banerjee, Duflo, & Glennerster, 2008, pp. 488–489; Sandefur & Glassman, 2015, pp. 2–3, 14–15).
+Although performance-based incentives are widely used to mitigate principal–agent problems, they can unintentionally encourage strategic behavior, including the manipulation of performance metrics to meet targets. This risk is particularly acute when the same actors are responsible both for enforcing regulations and for generating the data used to evaluate their own performance. Evidence suggests that institutional separation between information providers and enforcers can increase data integrity and reinforce accountability mechanisms (Banerjee, Duflo, & Glennerster, 2008, pp. 487–489; Sandefur & Glassman, 2015, pp. 116–118, 124).
 
 To assess this question, we analyze the effects of transferring the responsibility for data provision from local governments to independent third parties. Building on the institutional shift in information flow outlined in *Chapter 1.1*, this chapter takes a closer look at how the reassignment influences the extent of data manipulation and the overall reliability of pollution measurements.
 
@@ -3197,7 +3207,7 @@ Let's now take a closer look at the results to see how the reassignment impacted
 
 ```{r "20_1"}
 monitor_api <- read_rds("monitor_api.rds")
-head(monitor_api)
+head(monitor_api, 3)
 ```
 
 
@@ -3217,7 +3227,7 @@ monitor_api <- monitor_api %>%
 
 The years 2016 and 2017 were selected because the reassignment of monitoring responsibilities to external parties began in November 2016. From this point onward, pollution data reflects third-party monitoring. Therefore, the `reassign` variable is set to 1 for observations from November 2016 onward, capturing the period after the policy change.
 
-We now perform a regression analysis to examine the relationship between satellite-based pollution measurements (`AOD`) and the natural logarithm of ground-level PM2.5 concentrations `(log_pm25api)`. To account for unobserved heterogeneity, we include fixed effects for monitor ID `(monitor_id)` and time (`year` and `month`), which control for monitor-specific and temporal factors that may influence pollution levels. As in the previous chapter, we cluster standard errors at the city level `(~city_id)` to obtain robust statistical inference by accounting for potential within-city correlations.
+We now perform a regression analysis to examine the relationship between satellite-based pollution measurements (`AOD`) and the natural logarithm of ground-level PM2.5 concentrations `(log_pm25api)`. To account for unobserved heterogeneity, we include fixed effects for monitor ID `(monitor_id)` and time (`year` and `month`), which control for monitor-specific and temporal factors that may influence pollution levels. As in the previous chapters, we cluster standard errors at the city level `(~city_id)` to obtain robust statistical inference by accounting for potential within-city correlations.
 
 **Task:** Fill in the ______ in the regression formula to specify the relationship between `AOD` and `log_pm25api`, including fixed effects for monitors `(monitor_id)` and time `(year:month)`. Ensure the model clusters standard errors by city `(~city_id)`.
 
@@ -3295,7 +3305,7 @@ print(round(coef_and_se, 3))
 
 ```
 
-The coefficient for `AOD` in this regression is **0.273**, indicating the elasticity between satellite-based pollution measurements (`AOD`) and ground-level PM2.5 data (`log_pm25api`). This value tells us that a **1%** increase in `AOD` is associated with a **27.3%** increase in ground-level PM2.5 measurements.
+The coefficient for `AOD` in this regression is **0.273**, indicating the elasticity between satellite-based pollution measurements (`AOD`) and ground-level PM2.5 data (`log_pm25api`). This value tells us that a 1% increase in `AOD` is associated with a **27.3%** increase in ground-level PM2.5 measurements.
 
 Next, we will directly estimate a regression model that includes the interaction term `AOD × reassign` to analyze how the reassignment of monitoring responsibilities influences the relationship between satellite-based pollution measurements (`AOD`) and ground-level PM2.5 data (`log_pm25api`). Specifically, we will extract the coefficient for this interaction term to quantify the extent to which the reassignment policy affects the alignment between these two measures.
 
@@ -3509,15 +3519,15 @@ Acemoglu, D., Fergusson, L., Robinson, J., Romero, D., & Vargas, J. (2020). The 
 
 Angrist, J. D., & Imbens, G. W. (1995). Two-stage least squares estimation of average causal effects in models with variable treatment intensity. Journal of the American Statistical Association, 90(430), 431–442.
 
-Angrist, J. D., & Pischke, J. S. (2009). Mostly harmless econometrics: An empiricist’s companion. Princeton University Press.
+Angrist, J. D., & Pischke, J. S. (2008). Mostly harmless econometrics: An empiricist’s companion. Princeton University Press.
 
 Axbard, S., & Deng, Z. (2024). Informed enforcement: Lessons from pollution monitoring in China. American Economic Journal: Applied Economics, 16(1), 213–252. 
-
-Baltagi, B. H. (2021). Econometric analysis of panel data (6th ed.). Springer.
 
 Banerjee, A. V., Duflo, E., & Glennerster, R. (2008). Putting a band-aid on a corpse: Incentives for nurses in the Indian public health care system. Journal of the European Economic Association, 6(2–3), 487–500.
 
 Bertrand, M., Duflo, E., & Mullainathan, S. (2004). How much should we trust differences-in-differences estimates? Quarterly Journal of Economics, 119(1), 249–275.
+
+Besley, T., & Burgess, R. (2002). The political economy of government responsiveness: Theory and evidence from India. Quarterly Journal of Economics, 117(4), 1415–1451.
 
 Buntaine, M. T., & Daniels, B. (2020). Combining bottom-up monitoring and top-down accountability: A field experiment on managing corruption in Uganda. Research & Politics, 7(3), 1–8.
 
@@ -3525,13 +3535,15 @@ Cameron, A. C., & Miller, D. L. (2015). A practitioner’s guide to cluster-robu
 
 Chang, T., Graff Zivin, J., Gross, T., & Neidell, M. (2016). The effect of pollution on worker productivity: Evidence from call-center workers in China (NBER Working Paper No. 22328). National Bureau of Economic Research.
 
+Ghanem, D., & Zhang, J. (2014). ‘Effortless perfection’: Do Chinese cities manipulate air pollution data? Journal of Environmental Economics and Management, 68(2), 203–225.
+
 Greene, W. H. (2012). Econometric analysis (7th ed.). Pearson Education.
 
-Greenstone, M., He, G., Jia, R., & Liu, T. (2022). Can technology solve the principal-agent problem? Evidence from China’s war on air pollution. American Economic Review: Insights, 4(1), 54–70.
+Greenstone, M., & Hanna, R. (2014). Environmental regulations, air and water pollution, and infant mortality in India. American Economic Review, 104(10), 3038–3072.
 
 Haddad, M. A. (2015). Increasing environmental performance in a context of low governmental enforcement: Evidence from China. Journal of Environment & Development, 24(1), 3–25.
 
-Kostka, G. (2014). Environmental governance in China: State, society and market. Springer.
+Kostka, G., & Mol, A. P. J. (2013). Implementation and participation in China’s local environmental politics: Challenges and innovations. Journal of Environmental Policy and Planning, 15(1), 3–16.
 
 Kranz, S. (2021). Parallel trends plot in R. Retrieved April 10, 2025, from https://skranz.github.io/r/2021/10/20/ParallelTrendsPlot.html#plot
 
@@ -3543,13 +3555,13 @@ Ministry of Environmental Protection. (2013). Technical regulation for selection
 
 Nakagaki, M., Kompanek, A., & Tominic, M. (2012). Improving public governance: Closing the implementation gap between law and practice. Center for International Private Enterprise.
 
-Organisation for Economic Co-operation and Development (OECD). (2016). The economic consequences of outdoor air pollution. OECD Publishing.
+Olken, B. A. (2007). Monitoring corruption: Evidence from a field experiment in Indonesia. Journal of Political Economy, 115(2), 200–249.
 
 Sandefur, J., & Glassman, A. (2015). The political economy of bad data: Evidence from African survey and administrative statistics. The Journal of Development Studies, 51(2), 116–132.
 
-Staiger, D., & Stock, J. H. (1997). Instrumental variables regression with weak instruments. Econometrica, 65(3), 557–586.
+Shimshack, J. P. (2014). The economics of environmental monitoring and enforcement. Annual Review of Resource Economics, 6(1), 339–360.
 
-Su, T., Li, J., Li, C., & Wang, Q. (2018). Spatiotemporal variability of PM₂.₅ concentrations and their relationship with meteorological factors in China. Atmospheric Environment, 193, 182–191.
+Staiger, D., & Stock, J. H. (1997). Instrumental variables regression with weak instruments. Econometrica, 65(3), 557–586.
 
 White, H. (1980). A heteroskedasticity-consistent covariance matrix estimator and a direct test for heteroskedasticity. Econometrica, 48(4), 817–838.
 
