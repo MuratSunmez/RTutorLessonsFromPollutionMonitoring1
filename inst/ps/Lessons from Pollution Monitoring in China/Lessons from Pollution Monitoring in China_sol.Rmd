@@ -4313,13 +4313,13 @@ Staiger, D., & Stock, J. H. (1997). Instrumental variables regression with weak 
 
 White, H. (1980). A heteroskedasticity-consistent covariance matrix estimator and a direct test for heteroskedasticity. Econometrica, 48(4), 817–838.
 
-World Health Organization. (2016). Ambient air pollution: A global assessment of exposure and burden of disease. World Health Organization.
-
-World Health Organization (WHO). (2021). WHO global air quality guidelines: Particulate matter (PM₂.₅ and PM₁₀), ozone, nitrogen dioxide, sulfur dioxide and carbon monoxide. Retrieved April 10, 2025, from https://www.who.int/publications/i/item/9789240034228
+Wooldridge, J. M. (2010). Econometric analysis of cross section and panel data (2nd ed.). MIT Press.
 
 World Bank. (2017). World development report 2017: Governance and the law. World Bank.
 
-Wooldridge, J. M. (2010). Econometric analysis of cross section and panel data (2nd ed.). MIT Press.
+World Health Organization. (2016). Ambient air pollution: A global assessment of exposure and burden of disease. World Health Organization.
+
+World Health Organization. (2021). WHO global air quality guidelines: Particulate matter (PM₂.₅ and PM₁₀), ozone, nitrogen dioxide, sulfur dioxide and carbon monoxide. Retrieved April 10, 2025, from https://www.who.int/publications/i/item/9789240034228
 
 Wu, M., & Cao, X. (2021). Greening the career incentive structure for local officials in China: Does less pollution increase the chances of promotion for Chinese local leaders? Journal of Environmental Economics and Management, 107, 102440.
 
