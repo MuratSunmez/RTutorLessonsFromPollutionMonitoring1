@@ -5,6 +5,7 @@ user.name = ''
 ```
 
 
+
 # Lessons from Pollution Monitoring in China 
 
 Author: Murat Sunmez
@@ -3376,9 +3377,10 @@ results <- broom::tidy(model_3) %>%
   filter(term %in% c("AOD", "AOD:reassign")) %>%
   select(term, estimate, std.error) %>%
   mutate(
-    estimate = round(estimate, 3),
-    std.error = round(std.error, 3)
-  )
+    Coefficient = round(estimate, 3),
+    Std_Error = round(std.error, 3)
+  ) %>%
+  select(term, Coefficient, Std_Error)
 
 # Display results
 print(results)

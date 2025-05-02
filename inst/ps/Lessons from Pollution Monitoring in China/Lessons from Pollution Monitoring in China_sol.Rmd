@@ -1,3 +1,4 @@
+
 #< ignore
 
 ```{r "setup"}
@@ -7,7 +8,7 @@ library(yaml)
 
 ps.name = "Lessons from Pollution Monitoring in China"; sol.file = paste0(ps.name,"_sol.Rmd")
 # character vector of all packages you load in the problem set
-libs = c("ggplot2", "haven", "dplyr", "tidyr", "modelsummary","kableExtra","fixest","readr","sf","rnaturalearth","gridExtra","broom","igraph")
+libs = c("ggplot2", "haven", "dplyr", "tidyr", "modelsummary","kableExtra","fixest","readr","sf","rnaturalearth","rnaturalearthdata","gridExtra","broom","igraph")
 
 create.ps(sol.file = paste0(ps.name,"_sol.Rmd"), ps.name=ps.name, user.name = NULL, libs=libs, stop.when.finished=FALSE, addons = "quiz")
 # Show the problem set in the webbrowser
@@ -4122,9 +4123,10 @@ results <- broom::tidy(model_3) %>%
   filter(term %in% c("AOD", "AOD:reassign")) %>%
   select(term, estimate, std.error) %>%
   mutate(
-    estimate = round(estimate, 3),
-    std.error = round(std.error, 3)
-  )
+    Coefficient = round(estimate, 3),
+    Std_Error = round(std.error, 3)
+  ) %>%
+  select(term, Coefficient, Std_Error)
 
 # Display results
 print(results)
